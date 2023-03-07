@@ -23,6 +23,9 @@ public class HomeWorks {
 
         // by class
 
+        WebElement divcontainer =wd.findElement(By.className("container"));
+        WebElement divcontainer1 =wd.findElement(By.className("container"));
+
         //By id
 
         // by attribute

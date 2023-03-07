@@ -15,7 +15,7 @@ public class Index {
     @BeforeClass
     public void setUp(){
         wd = new ChromeDriver();
-        wd.get("file:///Users/tayahatum/Downloads/apk/index.html");
+        wd.get("file:C:\\Users\\eldar\\OneDrive\\Documents\\2022\\Git\\index.html");
     }
 
     @Test
