@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,25 +20,25 @@ public class Index {
     }
 
     @Test
-    public void cssLocators(){
+    public void cssLocators() {
         // by tag name
-       WebElement el= wd.findElement(By.tagName("button"));
-       WebElement element = wd.findElement(By.cssSelector("button"));
+        WebElement el = wd.findElement(By.tagName("button"));
+        WebElement element = wd.findElement(By.cssSelector("button"));
 
-       WebElement el1 = wd.findElement(By.tagName("a"));
-       WebElement element1= wd.findElement(By.cssSelector("a"));
-      List<WebElement> list = wd.findElements(By.tagName("a"));
-      List<WebElement> list1=wd.findElements(By.cssSelector("a"));
-      int i =list.size();
-      WebElement el4= list.get(2);
+        WebElement el1 = wd.findElement(By.tagName("a"));
+        WebElement element1 = wd.findElement(By.cssSelector("a"));
+        List<WebElement> list = wd.findElements(By.tagName("a"));
+        List<WebElement> list1 = wd.findElements(By.cssSelector("a"));
+        int i = list.size();
+        WebElement el4 = list.get(2);
 
-      // by class
+        // by class
 
-        WebElement divcontainer =wd.findElement(By.className("container"));
-        WebElement divcontainer1 =wd.findElement(By.cssSelector(".container"));
+        WebElement divcontainer = wd.findElement(By.className("container"));
+        WebElement divcontainer1 = wd.findElement(By.cssSelector(".container"));
 
         List<WebElement> navlist = wd.findElements(By.className("nav-item"));
-        List<WebElement> navlist1 =wd.findElements(By.cssSelector(".nav-item"));
+        List<WebElement> navlist1 = wd.findElements(By.cssSelector(".nav-item"));
 
         //By id
 
@@ -56,7 +57,7 @@ public class Index {
 
         // By.linkText By.partialLinkText
         WebElement a = wd.findElement(By.linkText("Item 1"));
-        List<WebElement> a1 =wd.findElements(By.partialLinkText("m 1"));
+        List<WebElement> a1 = wd.findElements(By.partialLinkText("m 1"));
 
 
         WebElement inp = wd.findElement(By.cssSelector("[placeholder='Type your name']"));
@@ -66,7 +67,11 @@ public class Index {
         wd.findElement(By.cssSelector("[placeholder $='name']"));
         // contains
         wd.findElement(By.cssSelector("[placeholder *='your']"));
-
+    }
+          @Test
+          public void tableTest(){
+        WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3)>td:last-child"));
+            Assert.assertEquals(canada.getText(),  "Canada");
 
     }
 
