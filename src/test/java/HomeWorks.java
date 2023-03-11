@@ -2,8 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 
 public class HomeWorks {
 
@@ -11,7 +14,14 @@ public class HomeWorks {
 
     @BeforeClass
     public void setUp(){
-        wd=new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        DesiredCapabilities cp = new DesiredCapabilities();
+        cp.setCapability(ChromeOptions.CAPABILITY, options);
+        options.merge(cp);
+
+        wd = new ChromeDriver(options);
         wd.get("https://telranedu.web.app/login");
     }
 
@@ -24,7 +34,7 @@ public class HomeWorks {
         // by class
 
         WebElement divcontainer =wd.findElement(By.className("container"));
-        WebElement divcontainer1 =wd.findElement(By.cssSelector("container"));
+        WebElement divcontainer1 =wd.findElement(By.cssSelector(".container"));
 
         //By id
 
@@ -34,7 +44,7 @@ public class HomeWorks {
         // by attribute
         WebElement inputEmail = wd.findElement(By.cssSelector("[placeholder=\"Email\"]"));
         WebElement inputEmail1 = wd.findElement(By.cssSelector("[placeholder='Password']"));
-        WebElement  e18 = wd.findElement();
+        //WebElement  e18 = wd.findElement();
 
         // one of elements find by attribute ==> start & end & contains value
         // start
