@@ -30,30 +30,36 @@ public class HomeWorks {
         // by tag name
         WebElement el= wd.findElement(By.tagName("button"));
         WebElement element = wd.findElement(By.cssSelector("button"));
+        WebElement elementxp = wd.findElement(By.xpath("//*[@id='button']"));
 
         // by class
 
         WebElement divcontainer =wd.findElement(By.className("container"));
         WebElement divcontainer1 =wd.findElement(By.cssSelector(".container"));
+        WebElement divcontainerxp =wd.findElement(By.xpath("//*[@class='container]"));
 
         //By id
 
         WebElement nav = wd.findElement(By.id("root"));
         WebElement nav1 = wd.findElement(By.cssSelector("#root"));
+        WebElement navxp = wd.findElement(By.xpath("//*[@id='root']"));
 
         // by attribute
         WebElement inputEmail = wd.findElement(By.cssSelector("[placeholder=\"Email\"]"));
         WebElement inputEmail1 = wd.findElement(By.cssSelector("[placeholder='Password']"));
+        WebElement inputEmailxp = wd.findElement(By.xpath("//*[@placeholder=\"Email\"]"));
+        WebElement inputEmailxp2 = wd.findElement(By.xpath("//*[@placeholder='Password']"));
+
         //WebElement  e18 = wd.findElement();
 
         // one of elements find by attribute ==> start & end & contains value
         // start
         wd.findElement(By.cssSelector("[placeholder ^='Email']"));
+        wd.findElement(By.xpath("//*[@placeholder^='Email']"));
         // end
         wd.findElement(By.cssSelector("[placeholder $='Password']"));
+        wd.findElement(By.xpath("//*[@placeholder $='Password']"));
         // contains
        // wd.findElement(By.cssSelector("[placeholder *='your']"));
-
-
     }
 }
