@@ -30,7 +30,7 @@ public class HomeWorks {
         // by tag name
         WebElement el= wd.findElement(By.tagName("button"));
         WebElement element = wd.findElement(By.cssSelector("button"));
-        WebElement elementxp = wd.findElement(By.xpath("//*[@id='button']"));
+        WebElement elementxp = wd.findElement(By.xpath("//button"));
 
         // by class
 
@@ -62,4 +62,33 @@ public class HomeWorks {
         // contains
        // wd.findElement(By.cssSelector("[placeholder *='your']"));
     }
-}
+
+    @Test
+    public void classwork() {
+        //parent
+        WebElement el = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/.."));
+
+        WebElement el3 = wd.findElement(By.xpath("//h1/ancestor::*"));
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::div[1]"));
+        WebElement el5 = wd.findElement(By.xpath("///h1/ancestor::div[2]"));
+
+        List<WebElement> list1 = wd.findElements(By.xpath("//h1/following-sibling::a"));
+        //preceding-sibling
+        WebElement el7 = wd.findElement(By.xpath("//a[@href='/login']/preceding-sibling::h1"));
+        List<WebElement> list2 = wd.findElements(By.xpath("//a[@href='/login']/preceding-sibling::a"));
+    }
+        @Test
+        public void classwork2(){
+            WebElement element = wd.findElement(By.cssSelector("[name=login]"));
+
+            String text =element.getText();
+            System.out.println(text);
+
+            WebElement form =wd.findElement(By.xpath("//form"));
+            String
+        }
+    }
+
+
